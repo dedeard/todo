@@ -1,42 +1,32 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  /* Light Theme Variables */
-  --background: hsl(0, 0%, 98%); /* Very Light Gray */
-  --foreground: hsl(235, 19%, 35%); /* Very Dark Grayish Blue */
-
-  /* Additional base variables for Light Theme */
+  --background: hsl(0, 0%, 98%);
+  --foreground: hsl(235, 19%, 35%);
   --very-light-grayish-blue: hsl(236, 33%, 92%);
   --light-grayish-blue: hsl(233, 11%, 84%);
   --dark-grayish-blue: hsl(236, 9%, 61%);
 }
 
 @theme {
-  /* Breakpoints */
-  --breakpoint-mobile: 23.4375rem; /* 375px */
-  --breakpoint-desktop: 90rem; /* 1440px */
-
-  /* Primary Colors */
+  --breakpoint-mobile: 23.4375rem;
+  --breakpoint-desktop: 90rem;
   --color-bright-blue: hsl(220, 98%, 61%);
-
-  /* Font Settings */
-  --font-josefin: "Josefin Sans", sans-serif;
+  --color-check-from: hsl(192, 100%, 67%);
+  --color-check-to: hsl(280, 87%, 65%);
+  --font-sans: 'Josefin Sans', sans-serif;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
-  --text-base: 1.125rem; /* 18px */
-
-  /* Theme Colors */
+  --text-base: 1.125rem;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
-  /* Light Theme Colors */
   --color-very-light-gray: hsl(0, 0%, 98%);
   --color-very-light-grayish-blue: hsl(236, 33%, 92%);
   --color-light-grayish-blue: hsl(233, 11%, 84%);
   --color-dark-grayish-blue: hsl(236, 9%, 61%);
   --color-very-dark-grayish-blue: hsl(235, 19%, 35%);
-
-  /* Dark Theme Colors */
   --color-very-dark-blue: hsl(235, 21%, 11%);
   --color-very-dark-desaturated-blue: hsl(235, 24%, 19%);
   --color-light-grayish-blue-dark: hsl(234, 39%, 85%);
@@ -44,23 +34,13 @@
   --color-dark-grayish-blue-dark: hsl(234, 11%, 52%);
   --color-very-dark-grayish-blue-1: hsl(233, 14%, 35%);
   --color-very-dark-grayish-blue-2: hsl(237, 14%, 26%);
-
-  /* Gradient Background */
-  --color-check-gradient-from: hsl(192, 100%, 67%);
-  --color-check-gradient-to: hsl(280, 87%, 65%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: hsl(235, 21%, 11%); /* Very Dark Blue */
-    --foreground: hsl(234, 39%, 85%); /* Light Grayish Blue */
-
-    /* Additional base variables for Dark Theme */
-    --very-light-grayish-blue: hsl(
-      236,
-      33%,
-      92%
-    ); /* Light Grayish Blue (hover) */
+    --background: hsl(235, 21%, 11%);
+    --foreground: hsl(234, 39%, 85%);
+    --very-light-grayish-blue: hsl(236, 33%, 92%);
     --light-grayish-blue: hsl(234, 39%, 85%);
     --dark-grayish-blue: hsl(234, 11%, 52%);
   }
@@ -69,16 +49,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-josefin);
+  font-family: var(--font-sans);
   font-size: var(--text-base);
   font-weight: var(--font-weight-normal);
-}
-
-/* Custom gradient utility class */
-.bg-check-gradient {
-  background-image: linear-gradient(
-    to right,
-    var(--color-check-gradient-from),
-    var(--color-check-gradient-to)
-  );
 }
